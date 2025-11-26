@@ -1,12 +1,13 @@
 import prisma from "../prisma.js";
 
 export async function getAllUsers(req, res) {
-const users = await prisma.user.findMany({ include: { posts: true } });
+  const users = await prisma.user.findMany({ 
+   });
   res.json(users);
 }
 
 export async function deleteUser(req, res) {
-const { id } = req.params;
+  const { id } = req.params;
 
   await prisma.user.delete({ where: { id: Number(id) } });
   res.json({ message: "User deleted" });

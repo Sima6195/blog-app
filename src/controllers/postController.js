@@ -1,8 +1,8 @@
 import prisma from "../prisma.js";
 
 export async function getAllPosts(req, res) {
-  const posts = await prisma.post.findMany({
-    include: { author: true },
+  const posts = await prisma.posts.findMany({
+ 
     orderBy: { createdAt: "desc" }
   });
   res.json(posts);

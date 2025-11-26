@@ -8,7 +8,7 @@ import {
 
 const router = Router();
 
-router.get("/users", protect, isAdmin, getAllUsers);
+router.get("/users/", protect, isAdmin, getAllUsers);
 router.delete("/users/:id", protect, isAdmin, deleteUser);
 router.delete("/posts/:id", protect, isAdmin, deletePostAdmin);
 
