@@ -27,11 +27,11 @@ export async function getAllUsers(req, res) {
     res.json(user);
   }
 
-  
+
 export async function login(req, res) {
   const { email, password } = req.body;
 
-  const user = await prisma.user.findUnique.findMany({ where: { email } });
+  const user = await prisma.user.findUnique({ where: { email } });
   if (!user) return res.status(400).json({ message: "Invalid email" });
 
   const match = await bcrypt.compare(password, user.password);

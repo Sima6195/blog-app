@@ -2,8 +2,7 @@ import prisma from "../prisma.js";
 
 export async function getProfile(req, res) {
   const user = await prisma.user.findUnique({
-    where: { id: req.user.id },
-    include: { posts: true }
+    where: { id: req.user.id }
   });
   res.json(user);
 }

@@ -7,7 +7,7 @@ import {
   getAllPosts,
 } from "../controllers/postController.js";
 
-const router = Router();
+const  router = Router();
 
 router.get("/", getAllPosts);
 router.post("/", protect, createPost);
