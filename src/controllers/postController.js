@@ -15,6 +15,7 @@ export async function createPost(req, res) {
       content: req.body.content,
       authorId: req.user.id
     }
+    
   });
   res.json(post);
 }

@@ -15,6 +15,5 @@ export async function updateProfile(req, res) {
     where: { id: req.user.id },
     data: { name, email }
   });
-
   res.json(updated);
 }
