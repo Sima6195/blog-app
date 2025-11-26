@@ -16,5 +16,6 @@ export async function deletePostAdmin(req, res) {
   const { id } = req.params;
 
   await prisma.post.delete({ where: { id: Number(id) } });
+  
   res.json({ message: "Post deleted by admin" });
 }
