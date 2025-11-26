@@ -39,6 +39,7 @@ export async function login(req, res) {
 
   res.json({
     message: "Login successful",
+    
     token: generateToken(user)
   });
 }
