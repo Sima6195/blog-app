@@ -18,8 +18,6 @@ export async function createPost(req, res) {
   });
   res.json(post);
 }
-
-
 export async function updatePost(req, res) {
   const { id } = req.params;
 
@@ -45,6 +43,5 @@ export async function deletePost(req, res) {
     return res.status(403).json({ message: "Not allowed" });
 
   await prisma.post.delete({ where: { id: Number(id) } });
-
   res.json({ message: "Post deleted" });
 }
